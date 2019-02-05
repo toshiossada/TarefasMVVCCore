@@ -26,8 +26,8 @@
                     <td>@item.Nome</td>
                     <td>@item.DataConclusaoTarefa</td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.id">Editar</a>
-                        <a asp-action="Delete" asp-route-id="@item.id">Deletar</a>
+                        <a asp-action="Edit" asp-route-id="@item.id" asp-action="Editar">Editar</a>
+                        <a asp-action="Delete" asp-route-id="@item.id" asp-action="Delete">Deletar</a>
                     </td>
                 </tr>
             }

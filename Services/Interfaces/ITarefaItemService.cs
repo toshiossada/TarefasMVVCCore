@@ -8,8 +8,9 @@ namespace Tarefas.Services
     {
         Task<IEnumerable<TarefaItem>> GetItensAsync();
         Task<bool> AdicionarItemTarefa(TarefaItem item);
-        
-
+        Task<bool> DeletarItem(int id);
+        TarefaItem GetTarefaById(int id);
+        Task Update(TarefaItem item);
 
     }
 }

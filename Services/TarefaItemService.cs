@@ -28,10 +28,34 @@ namespace Tarefas.Services {
             return result == 1;
         }
 
+        public async Task<bool> DeletarItem(int id)
+        {
+             var tarefaItem = GetTarefaById(id);
+             _context.Tarefas.Remove(tarefaItem);
+             var result = await _context.SaveChangesAsync();
+
+             return result == 1;
+        }
+
         public async Task<IEnumerable<TarefaItem>> GetItensAsync () {
             var result = await _context.Tarefas.Where (r => !r.EstaCompleta).ToArrayAsync ();
 
             return result;
+        }
+
+        public TarefaItem GetTarefaById(int id)
+        {
+            var result = _context.Tarefas.Find(id);
+
+            return result;
+        }
+
+        public async Task Update(TarefaItem item)
+        {
+            if(item == null) throw new ArgumentException(nameof(item));
+
+            _context.Tarefas.Update(item);
+            await _context.SaveChangesAsync();
         }
     }
 }
