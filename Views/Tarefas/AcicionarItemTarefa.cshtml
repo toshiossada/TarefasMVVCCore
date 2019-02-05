@@ -1,0 +1,30 @@
+@model TarefaItem
+
+<h2>Criar Nova Tarefa</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AcicionarItemTarefa" asp-controller="Tarefas" method="POST">
+            <div asp-validation-sumary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input type="text" asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DataConclusaoTarefa" class="control-label"></label>
+                <input type="text" asp-for="DataConclusaoTarefa" class="form-control" />
+                <span asp-validation-for="DataConclusaoTarefa" class="text-danger"></span>
+            </div>            
+            
+            <div class="form-group">
+                <input type="submit" value="Criar Tarefa" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Retornar</a>
+</div>
