@@ -32,7 +32,9 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Tarefas" asp-action="Index">Tarefas</a></li>
+                    <li><a asp-area="" asp-controller="Tarefas" asp-action="Index" asp-route-completa=null>Listar Todas as Tarefas</a></li>
+                    <li><a asp-area="" asp-controller="Tarefas" asp-action="Index" asp-route-completa=true>Listar Tarefas Completas</a></li>
+                    <li><a asp-area="" asp-controller="Tarefas" asp-action="Index" asp-route-completa=false>Listar Tarefas Não Completas</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
                 <partial name="_LoginPartial" />

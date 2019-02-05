@@ -11,8 +11,8 @@ namespace Tarefas.Controllers {
         public TarefasController (ITarefaItemService tarefaItemService) {
             _tarefaItemService = tarefaItemService;
         }
-        public async Task<IActionResult> Index () {
-            var tarefas = await _tarefaItemService.GetItensAsync ();
+        public async Task<IActionResult> Index (bool? completa) {
+            var tarefas = await _tarefaItemService.GetItensAsync (completa);
             var model = new TarefaViewModel () {
                 tarefasItens = tarefas
             };

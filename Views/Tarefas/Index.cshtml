@@ -21,10 +21,10 @@
             {
                 <tr>
                     <td>
-                        <input type="checkbox" name="@item.id" value="true" class="done-checkbox"/>
+                        <input type="checkbox" name="@item.id" value="true" checked="@item.EstaCompleta" class="done-checkbox"/>
                     </td>
                     <td>@item.Nome</td>
-                    <td>@item.DataConclusaoTarefa</td>
+                    <td>@String.Format("{0:dd/MM/yyyy}",@item.DataConclusaoTarefa)</td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.id" asp-action="Editar">Editar</a>
                         <a asp-action="Delete" asp-route-id="@item.id" asp-action="Delete">Deletar</a>
